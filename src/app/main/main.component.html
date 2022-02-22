@@ -1,213 +1,184 @@
-
-
-<div  style="display: flex;">
-<!-- Cadastro Form -->
-  <div>
-<div class='top'>
-  <div class='content-white'>
-    Cadastrar Veiculos
-  </div>
-  <div class='circ-pink'></div>
-</div>
-<form [formGroup]="formVeiculo" (ngSubmit)="cadastrarVeiculo()" action='' class='form'>
-  <p class='field required'>
-    <label class='label' for='name'>Nome veiculo</label>
-    <input formControlName="nomeVeiculo" class='text-input' required id='name' name='name' type='text'
-      value=''>
-  </p>
-  <p class='field required half'>
-    <label class='label'>Marca do veiculo</label>
-      <select  required formControlName="marcaVeiculo" class="form-control select2 select2-hidden-accessible text-input" style="width:
+<div style="display: flex; align-items: flex-start;">
+  <!-- Cadastro Form -->
+  <div class="px-3">
+    <div class='top'>
+      <div class='content-white'>
+        Cadastrar Veiculos
+      </div>
+      <div class='circ-pink'></div>
+    </div>
+    <form [formGroup]="formVeiculo" (ngSubmit)="cadastrarVeiculo()" action='' class='form'>
+      <p class='field required'>
+        <label class='label' for='name'>Nome veiculo</label>
+        <input formControlName="veiculo" class='text-input' required id='name' name='name' type='text' value=''>
+      </p>
+      <p class='field required half'>
+        <label class='label'>Marca do veiculo</label>
+        <select required formControlName="marca" class="form-control select2 select2-hidden-accessible text-input"
+          style="width:
         100%;" tabindex="-1" aria-hidden="true">
-        <option selected="selected">HONDA</option>
-        <option>FIAT</option>
-        <option>FORD</option>
-        <option>CHEVROLET</option>
-        <option>VOLKSWAGEN</option>
-      </select>
-  </p>
-  <p class='field half required'>
-    <label class='label'>Ano</label>
-    <input formControlName="anoVeiculo" class='text-input' type='tel'  maxlength="4" >
-  </p>
+          <option selected="selected">HONDA</option>
+          <option>FIAT</option>
+          <option>FORD</option>
+          <option>CHEVROLET</option>
+          <option>VOLKSWAGEN</option>
+        </select>
+      </p>
+      <p class='field half required'>
+        <label class='label'>Ano</label>
+        <input formControlName="ano" class='text-input' type='tel' maxlength="4">
+      </p>
 
-  <div class='field required'>
-    <label class='label'>
-      Selecione sua cor
-    </label>
-    <select formControlName="corVeiculo" class="form-control select2 select2-hidden-accessible text-input" style="width:
+      <div class='field required'>
+        <label class='label'>
+          Selecione sua cor
+        </label>
+        <select formControlName="cor" class="form-control select2 select2-hidden-accessible text-input" style="width:
       100%;" tabindex="-1" aria-hidden="true">
-      <option selected="selected">BRANCO</option>
-      <option>PRETO</option>
-      <option>VERMELHO</option>
-      <option>AZUL</option>
-      <option>VERDE</option>
-      <option>AMARELO</option>
-    </select>
-  </div>
-  <div class='field required'>
-    <label class='label'>Situação do Veiculo?</label>
-    <ul class='checkboxes'>
-      <li  class='checkbox'>
-        <input formControlName="situacaoVeiculo" class='checkbox-input' id='choice-0' name='situacaoVeiculo' type='radio'
-          value='0'>
-        <label class='checkbox-label' for='choice-0'>Vendido</label>
-      </li>
-      <li class='checkbox'>
-        <input formControlName="situacaoVeiculo" class='checkbox-input' id='choice-1' name='situacaoVeiculo' type='radio'
-          value='1'>
-        <label class='checkbox-label' for='choice-1'>Está a venda</label>
-      </li>
-
-    </ul>
-  </div>
-
-  <p class='field'>
-    <label class='label' for='about'>Descrição</label>
-    <textarea class='textarea' cols='50' id='about' name='about' rows='4'></textarea>
-  </p>
-
-  <p class='field half'>
-    <input class='button' type='submit' value='Cadastrar'>
-  </p>
-</form>
-</div>
-<!-- Lista de Veiculos -->
-<div style="margin-left: 29px;width: 100%;">
-    <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseIndicadores" role="button" aria-expanded="false" aria-controls="collapseIndicadores">
-      INFORMAÇÕES
-    </a>
-    <div class="collapse" id="collapseIndicadores">
-      <div class="card card-header">
-        <ol class="list-group list-group-numbered">
-          <li class="list-group-item list-group-item-light d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-              <div class="fw-bold">
-                Veiculos Não Vendidos
-              </div>
-            </div>
-            <span class="badge bg-dark rounded-pill">8</span>
-          </li>
-          <li class="list-group-item list-group-item-light d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-              <div class="fw-bold">
-                Distribuidos por Decada
-              </div>
-              <ul class="list-group  list-group-item-light list-group-horizontal">
-                <li class="list-group-item  list-group-item-light">
-                  Década de 1999
-                </li>
-                <li class="list-group-item  list-group-item-light">
-                  <strong>5 veículos</strong>
-                </li>
-              </ul>
-            </div>
-
-          </li>
-          <li class="list-group-item list-group-item-light d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-              <div class="fw-bold">
-                Distribuidos por Fabricante
-              </div>
-              <ul class="list-group  list-group-item-light list-group-horizontal">
-                <li class="list-group-item  list-group-item-light">
-                  HONDA
-                </li>
-                <li class="list-group-item  list-group-item-light">
-                  <strong>14 veículos</strong>
-                </li>
-              </ul>
-            </div>
-
-          </li>
-          <li class="list-group-item list-group-item-light d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-              <div class="fw-bold">
-                Registrados na Última Semana
-              </div>
-              <ul class="list-group  list-group-item-light list-group-horizontal">
-                <li class="list-group-item  list-group-item-light">
-                  FORD TESTE
-                </li>
-                <li class="list-group-item  list-group-item-light">
-                  FORD
-                </li>
-                <li class="list-group-item  list-group-item-light">
-                  2005
-                </li>
-                <li class="list-group-item  list-group-item-light">
-                  TESTE FORD
-                </li>
-                <li class="list-group-item  list-group-item-light">
-                  VENDIDO
-                </li>
-              </ul>
-
-            </div>
-
-          </li>
-        </ol>
+          <option selected="selected">BRANCO</option>
+          <option>PRETO</option>
+          <option>VERMELHO</option>
+          <option>AZUL</option>
+          <option>VERDE</option>
+          <option>AMARELO</option>
+        </select>
       </div>
-    </div>
-  <table class="table table-dark">
-    <thead>
-      <tr>
-        <th scope="col">Nome do Veiculo</th>
-        <th scope="col">Marca</th>
-        <th scope="col">Cor</th>
-        <th scope="col">Ano</th>
-        <th scope="col">Vendido</th>
-        <th scope="col">Descricao</th>
-        <th scope="col">Opções</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Honda</th>
-        <td>Mark</td>
-        <td>PRETO</td>
-        <td>1994</td>
-        <td>Sim</td>
-        <td>Mark</td>
-        <td>
-          <div class="btn-group" role="group">
-            <button  type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Editar</button>
-            <button type="button" class="btn btn-danger">Remover</button>
+      <div class='field required'>
+        <label class='label'>Situação do Veiculo?</label>
+        <input formControlName="vendido" type="radio" #radio style="display: none;">
+        <ul class='checkboxes'>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-0' type='radio' value='false' 
+            [checked]="formVeiculo.get('vendido')?.value" (click)="radio.checked = true; formVeiculo.get('vendido')?.setValue(true);">
+            <label class='checkbox-label' for='choice-0'>Vendido</label>
+          </li>
+          <li class='checkbox'>
+            <input class='checkbox-input' id='choice-1' type='radio' value='true' 
+            [checked]="!formVeiculo.get('vendido')?.value" (click)="radio.checked = true; formVeiculo.get('vendido')?.setValue(false);">
+            <label class='checkbox-label' for='choice-1'>Está a venda</label>
+          </li>
+
+        </ul>
+      </div>
+
+      <p class='field'>
+        <label class='label' for='about'>Descrição</label>
+        <textarea class='textarea' formControlName="descricao" cols='50' id='about' name='about' rows='4'></textarea>
+      </p>
+
+      <p class='field half'>
+        <input class='btn btn-danger' type='submit' value='Cadastrar' *ngIf="!isEditing">
+
+        <input class='btn btn-danger' type='button' *ngIf="isEditing" value='Atualizar' (click)="atualizar()">
+        <input class='btn btn-warning mx-3' type='button' *ngIf="isEditing" value='Cancelar'
+          (click)="cancelEdit()" />
+      </p>
+    </form>
+  </div>
+  <!-- Lista de Veiculos -->
+  <div class="px-3">
+    <div class="container-fluid mb-5">
+      <div class="row">
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body">
+              <h2>{{qntVeiculosNaoVendidos}}</h2>
+              <small>Quantidade de Veiculos não vendidos</small>
+            </div>
           </div>
-        </td>
-      </tr>
-      <!-- <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-      </tr> -->
-
-    </tbody>
-  </table>
-
-</div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
       </div>
     </div>
+    <h2 class="text-white">Veiculos cadastrados</h2>
+    <table class="table table-dark" style="height: 500px; overflow-y: auto; display: block;">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome do Veiculo</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Cor</th>
+          <th scope="col">Ano</th>
+          <th scope="col">Vendido</th>
+          <th scope="col">Descricao</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let veiculo of veiculosList">
+          <td>{{ veiculo.id }}</td>
+          <th scope="row">{{ veiculo.veiculo}}</th>
+          <td>{{ veiculo.marca }}</td>
+          <td>{{ veiculo.cor }}</td>
+          <td>{{ veiculo.ano }}</td>
+          <td>{{ veiculo.vendido ? "SIM" : "NÃO" }}</td>
+          <td>{{ veiculo.descricao }}</td>
+          <td>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-light" (click)="editVeiculo(veiculo)">Editar</button>
+              <button (click)="deleteVeiculo(veiculo)" type="button" class="btn btn-danger">Remover</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="text-white">Agrupados por década ( Quantidades )</h2>
+    <table class="table table-dark" style="height: 300px; overflow-y: auto; display: block;">
+      <thead>
+        <tr>
+          <th scope="col">Década</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let veiculo of veiculosAgrupadosDecadaList">
+          <td style="width: 200px">{{ veiculo.decada }}</td>
+          <td style="width: 200px">{{ veiculo.quantidade }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="text-white">Agrupados por Marca ( Quantidades )</h2>
+    <table class="table table-dark" style="height: 300px; overflow-y: auto; display: block;">
+      <thead>
+        <tr>
+          <th scope="col">Marca</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let veiculo of veiculosAgrupadosMarcaList">
+          <td style="width: 200px">{{ veiculo.marca }}</td>
+          <td style="width: 200px">{{ veiculo.quantidade }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h2 class="text-white">Veiculos cadastrados na última semana</h2>
+    <table class="table table-dark" style="height: 500px; overflow-y: auto; display: block;">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome do Veiculo</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Cor</th>
+          <th scope="col">Ano</th>
+          <th scope="col">Vendido</th>
+          <th scope="col">Descricao</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let veiculo of veiculosCadastradosLastWeekList">
+          <td>{{ veiculo.id }}</td>
+          <th scope="row">{{ veiculo.veiculo}}</th>
+          <td>{{ veiculo.marca }}</td>
+          <td>{{ veiculo.cor }}</td>
+          <td>{{ veiculo.ano }}</td>
+          <td>{{ veiculo.vendido ? "SIM" : "NÃO" }}</td>
+          <td>{{ veiculo.descricao }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
